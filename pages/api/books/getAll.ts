@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { google } from "googleapis";
-import { Book } from "@/types/book";
+import Book from "@/types/book";
 
 export default async function handler(
   req: NextApiRequest,

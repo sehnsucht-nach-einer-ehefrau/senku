@@ -1,6 +1,6 @@
 // pages/books/[id].tsx
 import { GetServerSideProps } from "next";
-import { Book } from "@/types/book";
+import Book from "@/types/book";
 import { getBook } from "@/utils/booksService";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

@@ -2,7 +2,7 @@
 
 import type React from "react";
 import { useState, useEffect } from "react";
-import type { Book } from "@/types/book";
+import Book from "@/types/book";
 import { toast } from "sonner";
 import {
   Dialog,
@@ -107,7 +107,7 @@ export default function BookForm({
         if (completeNewBookData) {
           onBookAdded(completeNewBookData); // Call callback
         } else {
-          toast.warn("Book added, but data mismatch. UI might update shortly.");
+          toast.info("Book added, but data mismatch. UI might update shortly.");
         }
         setFormData({ title: "", author: "" }); // Reset form
         setOpen(false); // Close dialog
@@ -153,7 +153,6 @@ export default function BookForm({
               id="title"
               name="title"
               placeholder="The Myth of Sisyphus"
-              name="randomName123"
               autoComplete="off"
               required
               value={formData.title}
@@ -168,7 +167,6 @@ export default function BookForm({
               name="author"
               placeholder="Albert Camus"
               required
-              name="randomName123"
               autoComplete="off"
               value={formData.author}
               onChange={handleChange}

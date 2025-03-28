@@ -1,7 +1,7 @@
 // pages/api/books/add.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 import { addBook, AddBookResult } from "@/utils/booksService"; // Import AddBookResult type
-import type { Book } from "@/types/book";
+import Book from "@/types/book";
 
 export default async function handler(
   req: NextApiRequest,

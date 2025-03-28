@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import type { Book } from "@/types/book";
+import Book from "@/types/book";
 import BookCard from "@/components/book-card";
 import { BookDialog } from "@/components/book-dialog";
 import { toast } from "sonner";
@@ -120,7 +120,7 @@ export default function BookGrid() {
       setSelectedBook(currentBookData);
       setIsDialogOpen(true);
     } else {
-      toast.warning("Book details might be outdated. Displaying cached info.");
+      toast.info("Book details might be outdated. Displaying cached info.");
       setSelectedBook(book);
       setIsDialogOpen(true);
     }
@@ -343,11 +343,9 @@ export default function BookGrid() {
         </h1>
         <div className="flex gap-4">
           <ModeToggle />
-
           <BookForm
             onBookAdded={handleAddBook} // Connects to the refetch logic
             onProcessingChange={handleProcessingChange}
-            disabled={isProcessing} // Disable form during processing
           />
         </div>
       </div>
@@ -355,8 +353,8 @@ export default function BookGrid() {
       {/* Search Input */}
       <input
         type="text"
+        name="search"
         value={query}
-        name="randomName123"
         autoComplete="off"
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search by title or author..."
@@ -445,10 +443,9 @@ export default function BookGrid() {
             !isProcessing && (setIsDialogOpen(false), setSelectedBook(null))
           }
           onDelete={() => handleDeleteBook(selectedBook.id)}
-          onUpdateStatus={(newStatus) =>
-            handleUpdateStatus(selectedBook.id, newStatus)
+          onUpdateStatus={(bookId, newStatus) =>
+            handleUpdateStatus(bookId, newStatus)
           }
-          isProcessing={isProcessing} // Pass processing state
         />
       )}
     </div>

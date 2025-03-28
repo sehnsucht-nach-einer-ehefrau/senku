@@ -1,7 +1,6 @@
 import Navbar from "@/components/navbar";
 import FullView from "@/components/fullView";
 import BookForm from "./bookForm";
-import Sync from "@/components/sync";
 
 import { ThemeProvider } from "@/components/theme-provider";
 

@@ -1,6 +1,6 @@
 // utils/booksService.ts
 import { getSheetsClient } from "./googleSheetsClient";
-import { Book } from "@/types/book";
+import Book from "@/types/book";
 import { GaxiosError } from "gaxios"; // Import error type for better handling
 
 const SPREADSHEET_ID = process.env.SPREADSHEET_ID!;

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Book } from "@/types/book";
+import Book from "@/types/book";
 import {
   Dialog,
   DialogContent,
@@ -82,7 +82,7 @@ export function BookDialog({
   };
 
   const handleSave = () => {
-    onUpdateStatus(Number.parseInt(selectedStatus));
+    onUpdateStatus(book.id, Number.parseInt(selectedStatus));
     onClose();
   };
 
@@ -97,7 +97,7 @@ export function BookDialog({
                 <div className="flex flex-col justify-center h-full items-center gap-4">
                   <Image
                     src={YinYang}
-                    alt={book.category}
+                    alt={`${book.category}`}
                     width={150}
                     height={150}
                   />
@@ -108,7 +108,7 @@ export function BookDialog({
                 <div className="flex flex-col justify-center h-full items-center gap-4">
                   <Image
                     src={Fantasy}
-                    alt={book.category}
+                    alt={`${book.category}`}
                     width={150}
                     height={150}
                   />
@@ -119,7 +119,7 @@ export function BookDialog({
                 <div className="flex flex-col justify-center h-full items-center gap-4">
                   <Image
                     src={GradCap}
-                    alt={book.category}
+                    alt={`${book.category}`}
                     width={150}
                     height={150}
                   />

@@ -1,6 +1,6 @@
 "use client";
 
-import type { Book } from "@/types/book";
+import Book from "@/types/book";
 import YinYang from "@/public/images/yin-yang.png";
 import GradCap from "@/public/images/graduate-cap.png";
 import Fantasy from "@/public/images/fantasy.png";
@@ -19,13 +19,28 @@ export default function BookCard({ book, onClick }: BookCardProps) {
     >
       <div className="w-full h-48 bg-accent rounded-xl flex justify-center items-center text-4xl text-gray-500">
         {book.category == 0 && (
-          <Image src={YinYang} alt={book.category} width={100} height={100} />
+          <Image
+            src={YinYang}
+            alt={`${book.category}`}
+            width={100}
+            height={100}
+          />
         )}
         {book.category == 1 && (
-          <Image src={Fantasy} alt={book.category} width={100} height={100} />
+          <Image
+            src={Fantasy}
+            alt={`${book.category}`}
+            width={100}
+            height={100}
+          />
         )}
         {book.category == 2 && (
-          <Image src={GradCap} alt={book.category} width={100} height={100} />
+          <Image
+            src={GradCap}
+            alt={`${book.category}`}
+            width={100}
+            height={100}
+          />
         )}
         {book.category != 0 && book.category != 1 && book.category != 2 && (
           <h1 className="text-4xl text-gray-500">?</h1>
