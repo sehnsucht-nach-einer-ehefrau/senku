@@ -15,9 +15,6 @@ export interface AddBookResult {
   // bookId?: number;
 }
 
-// --- getBook, removeBook, fixBookId, searchBooks, getLatestId remain the same ---
-// ... (keep existing functions as they were)
-
 // Modified addBook function
 export async function addBook(book: Book): Promise<AddBookResult> {
   // Basic validation

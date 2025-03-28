@@ -20,6 +20,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "gaxios": "^6.7.1",
+    "google-auth-library": "^9.15.1",
     "googleapis": "^148.0.0",
     "groq-sdk": "^0.17.0",
     "lucide-react": "^0.483.0",

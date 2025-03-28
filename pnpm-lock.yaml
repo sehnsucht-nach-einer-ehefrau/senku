@@ -41,6 +41,9 @@ importers:
       gaxios:
         specifier: ^6.7.1
         version: 6.7.1
+      google-auth-library:
+        specifier: ^9.15.1
+        version: 9.15.1
       googleapis:
         specifier: ^148.0.0
         version: 148.0.0
