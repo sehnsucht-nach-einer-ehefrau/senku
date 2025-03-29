@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<img src="https://raw.githubusercontent.com/sehnsucht-nach-einer-ehefrau/senku/main/senku.png" width="330"/></img>
 
-## Getting Started
+# SENKU
 
-First, run the development server:
+## An AI powered Personal Library
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### USE
+
+- This is for my own personal use, but you can download the source code and run it yourself with your own environment variables.
+
+.env.local should contain: 
+
+```
+GROQ_API_KEY=<your groq api key>
+SPREADSHEET_ID=<your google spreadsheet id>
+GOOGLE_CLIENT_EMAIL=<your google client email>
+GOOGLE_PRIVATE_KEY=<your google private key>
+GOOGLE_PROJECT_ID=<your google project id>
+APP_PASSWORD=<your own custom password>
+JWT_SECRET=<used to sign JWT tokens, a 32 character secure random string>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- The spreadsheet ID is the part of the URL that looks like this: `https://docs.google.com/spreadsheets/d/<spreadsheet_id>/edit#gid=0` (you make the spreadsheet manually, and then you can use the ID from the URL).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- For the Google environment variables, you must go to [Google Cloud Console](https://console.cloud.google.com/) and create a new project. Then, enable the Google Sheets API and create a service account. Download the JSON file and copy the values into your .env.local file.
+- Don't forget to share the spreadsheet with the service account email (found in the JSON file) so that it can access the spreadsheet.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Make the app password whatever you want as your password for the app.
+- Make the JWT secret a secure random string, 32 characters MINIMUM(for security). You can just go to random string generators online and generate one, and maybe put a bunch of your own symbols and whatever in there just for good measure.
 
-## Learn More
+### Future plans
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] Fix bugs?
