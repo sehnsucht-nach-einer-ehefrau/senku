@@ -26,7 +26,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { X } from "lucide-react";
 
 import YinYang from "@/public/images/yin-yang.png";
 import GradCap from "@/public/images/graduate-cap.png";
